@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>IoT server - Group 9</title>
+        <link rel="icon" type="image/x-icon" href="https://upload.wikimedia.org/wikipedia/commons/d/de/HCMUT_official_logo.png">
+        <link rel="stylesheet" href="main.css">
+        <script type="text/javascript" src="main.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/core.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/md5.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <div class="heading-box">
+            <div class="heading-list">
+                <button class="heading-content other" onclick="viewData()" id="data-btn">Live data</button>
+                <button class="heading-content other" onclick="viewLog()" id="log-btn">History</button>
+                <button class="heading-content other" onclick="viewGraph()" id="graph-btn">Graph</button>
+            </div>
+            <div class="logo-img"></div>
+            <div class="main-logo">I9T AQUARIUM</div>
+            <ul class="heading-list">
+                <div class="heading-content about-us">
+                    <button class="about-us-button">About us</button>
+                </div>
+                <div class="time-clock">
+                    <div id="clock"></div>
+                    <div id="date-clock"></div>
+                </div>
+            </ul>
+        </div>
+        <!-- <div id="counter"></div> -->
+        <!-- <div id="token" style="font-size: 20px"></div> -->
+
+        <div class="box-submit">
+            <a class="button-submit" href="#divOne">Get access token</a>
+        </div>
+        <div class="overlay" id="divOne">
+            <div class="wrapper">
+                <h2>Create new token</h2><a class="close" href="#">&times;</a>
+                <div class="content">
+                    <div class="container">
+                        <form>
+                            <label>Username</label>
+                            <input id="username-box" placeholder="Your username" type="text">
+                            <button class="button-submit" onclick="getToken()">Confirm</button>
+                            <br><br><br>
+                            <!-- <label>Device name</label>
+                            <input placeholder="Device name (Ex: Arduino Uno)" type="text"> -->
+                            <label>Token</label><br>
+                            <input id="token-box" placeholder="Your token will be displayed here." type="text" style="background-color: rgb(189, 184, 184);" readonly="readonly">
+                            <button id="copy-btn" class="button-submit" onclick="copyToken()">Copy token</button>
+                            <!-- <input type="submit" value="Submit"> -->
+                            <input type="text hidden" id="clipboard" readonly="readonly">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            //Copy token script
+            var copyBtn = document.getElementById("copy-btn");
+            var tempClipboard = document.getElementById("clipboard");
+            document.copyBtn.addEventListener('click', copyToken);
+            function copyToken() {
+                tempClipboard.value = userToken;
+                if (tempClipboard.select) {
+                    tempClipboard.select();
+                    document.execCommand('copy');
+                }          
+            }
+        </script>
+        <div id="data-begin"></div>
+        <br><br>
+        <div class="copyright">2022 - Minh Phuc Vien</div>
+    </body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>IoT server - Group 9</title>
+        <link rel="icon" type="image/x-icon" href="https://upload.wikimedia.org/wikipedia/commons/d/de/HCMUT_official_logo.png">
+        <link rel="stylesheet" href="main.css">
+        <script type="text/javascript" src="main.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/core.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/md5.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <h1 style="text-align: center; margin-top: 20px">Device 1: ABCXYZ</h1>
+        <div class="sensor-data-list">
+            <div class="sensor-data-item mmi1" id="temp-box">
+                <div class="mmi1 text">TEMPERATURE</div>
+                <div class="mmi1 val" id="get-temp"></div>
+                <div class="mmi1 text" id="check-temp"></div>
+            </div>
+            <div class="sensor-data-item mmi2" id="oxy-box">
+                <div>OXYGEN</div>
+                <div class="mmi2" id="get-oxy"></div>
+                <div class="mmi2" id="check-oxy"></div>
+            </div>
+            <div class="sensor-data-item mmi3" id="ph-box">
+                <div>WATER pH</div>
+                <div class="mmi3" id="get-ph"></div>
+                <div class="mmi2" id="check-ph"></div>
+            </div>
+        </div>
+    </body>
+</html>
+
