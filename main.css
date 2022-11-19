@@ -1,0 +1,294 @@
+* {
+    margin: 0;
+}
+/* html {  
+    scroll-behavior: smooth;  
+} */
+.heading-box {
+    background-color: rgb(67, 221, 213);
+    width: 100%;
+    height: 80px;
+    display: flex;
+    margin: auto;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+}
+
+.heading-list {
+    padding-left: 0;
+    margin: auto 16px;
+    display: flex;
+    
+}
+
+.heading-content {
+    color: black;
+    margin: 0 12px;
+    font-weight: bold;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    border: none;
+    background-color: transparent;
+    
+}
+
+.heading-content.other {
+    padding: 28px 28px;
+}
+
+.heading-content:hover {
+    background-color: rgb(20, 116, 111);
+    color: white;
+}
+
+.logo-img {
+    content: url(https://upload.wikimedia.org/wikipedia/commons/d/de/HCMUT_official_logo.png);
+    width: 60px;
+    height: 60px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.main-logo {
+    color: white;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 8%;
+    margin-left: -150px;
+    font-weight: bold;
+    font-size: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.about-us {
+    margin-right: 20px; 
+    display: flex;
+    padding-right: 10px; 
+    padding-left: 10px;
+    background-color:black; 
+}
+
+.about-us-button {
+    display: flex;
+    margin: auto;
+    padding-top: 29px;
+    padding-bottom: 28px;
+    font-weight: bold;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: black;
+    border-width: 0px;
+    color: white;
+}
+.about-us-button:hover {
+    background-color: rgb(20, 116, 111);
+}
+.time-clock {
+    text-align:right; 
+    font-size: 30px; 
+    font-family: Agency FB; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.sensor-data-list {
+    list-style: none;
+    display: flex;
+    margin: 10px 8px auto auto;
+    padding-left: 0;
+    background-color: white;
+    width: 100%;
+    height: 200px;
+}
+
+.sensor-data-item {
+    display: flex;
+    color: black;
+    width: 100%;
+    justify-content: center;
+    flex-flow: row;
+    margin-left: 20px;
+    margin-right: 20px; 
+    font-size: 30px;
+    font-weight: bold;
+    font-family: Calibri;
+    border-radius: 25px;
+}
+
+.sensor-data-item.mmi1 {
+    background-color: aquamarine;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sensor-data-item.mmi2 {
+    background-color: greenyellow;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sensor-data-item.mmi3 {
+    background-color: rgb(0, 110, 255);
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* .sensor-data-item.mmi1.val{
+    margin-top: 50px;
+} */
+
+/* CSS for history menu */
+
+.log-table {
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    list-style: none;
+    margin-top: 20px;
+
+    width: 50%;
+    padding-left: 0;
+    padding-right: 4px;
+    border-color: white;
+}
+
+.log-table-item {
+    width: 100%;
+    height: 50px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;;
+    color: black;
+}
+
+.log-table-item.even {
+    background-color: rgb(67, 221, 213);
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 600px;
+    font-size: 25px;
+}
+
+#wrapper{
+    position:relative;
+}
+#tempChart {
+    position:absolute; max-width:800px;
+}
+#oxyChart {
+    position:absolute; max-width:800px;
+}
+#phChart {
+    position:absolute; max-width:800px;
+}
+.box-submit {
+	text-align: center;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+.button-submit {
+	font-size: 1em;
+	padding: 15px 35px;
+	color: #fff;
+	text-decoration: none;
+	cursor: pointer;
+	transition: all 0.3s ease-out;
+	background: #403e3d;
+	border-radius: 50px;
+}
+.overlay {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(0, 0, 0, 0.8);
+	transition: opacity 500ms;
+	visibility: hidden;
+	opacity: 0;
+}
+.overlay:target {
+	visibility: visible;
+	opacity: 1;
+}
+.wrapper {
+	margin: 70px auto;
+	padding: 20px;
+	background: rgb(67, 221, 213);
+	border-radius: 5px;
+	width: 30%;
+	position: relative;
+	transition: all 5s ease-in-out;
+}
+.wrapper h2 {
+	margin-top: 0;
+	color: #333;
+}
+.wrapper .close {
+	position: absolute;
+	top: 20px;
+	right: 30px;
+	transition: all 200ms;
+	font-size: 30px;
+	font-weight: bold;
+	text-decoration: none;
+	color: #333;
+}
+.wrapper .close:hover {
+	color: #06D85F;
+}
+.wrapper .content {
+	max-height: 30%;
+	overflow: auto;
+}
+/*form*/
+
+.container {
+	border-radius: 5px;
+	background-color: rgb(67, 221, 213);
+	padding: 20px 0;
+}
+form label {
+	text-transform: uppercase;
+	font-weight: 500;
+	letter-spacing: 3px;
+}
+input[type=text], select, textarea {
+	width: 100%;
+	padding: 12px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+	margin-top: 6px;
+	margin-bottom: 16px;
+	resize: vertical;
+}
+input[type="submit"] {
+	background-color: #413b3b;
+	color: #fff;
+	padding: 15px 50px;
+	border: none;
+	border-radius: 50px;
+	cursor: pointer;
+	font-size: 15px;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+}
+
+#clipboard {
+    background-color: rgb(67, 221, 213);
+    color:rgb(67, 221, 213);
+    border-width: 0;
+    width: 1px;
+    height: 1px;
+}
