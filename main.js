@@ -5,6 +5,7 @@ function zeroFill(string, length) {
 	}
 	return string;
 }
+
 var getTime;
 function getClock() {
     var d = new Date();
@@ -14,7 +15,7 @@ function getClock() {
     if (s == 60) s = 0;
     getTime = zeroFill(h.toString(), 2) + ":" + zeroFill(m.toString(), 2) + ":" + zeroFill(s.toString(), 2);
     document.getElementById("clock").innerHTML = getTime;
-    document.getElementById("date-clock").innerHTML = d.getDay() + "/" + d.getMonth() + "/" + d.getFullYear();
+    document.getElementById("date-clock").innerHTML = d.getDate() + "/" + (d.getMonth()+1) + "/" + d.getFullYear();
 }
 
 //Counter to test if the page refreshed or not
@@ -23,6 +24,8 @@ function getClock() {
 //     document.getElementById("counter").innerHTML = "Counter: " + cnt;
 //     cnt++;
 // }
+//
+
 
 var temp;
 function getTemp() {
@@ -42,6 +45,7 @@ function getTemp() {
         document.getElementById("temp-box").style.backgroundColor = "aquamarine";
     }
 }
+
 
 var oxyRate;
 function getOxy() {
