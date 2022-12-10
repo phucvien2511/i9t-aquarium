@@ -95,17 +95,73 @@
     align-items: center;
     justify-content: center;
 }
-.sensor-data-list {
-    list-style: none;
+.sensor-container {
     display: flex;
-    margin: 10px 8px auto auto;
-    padding-left: 0;
-    background-color: white;
+    flex-direction: column;
+    width: 33%;
+    margin: auto 20px;
+}
+.sensor-data-list {
+    display: flex;
     width: 100%;
-    height: 200px;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+}
+#temp-box, #oxy-box, #ph-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: Calibri;
+    border-radius: 25px;
+    background-color: aquamarine;
+}
+.temp-btn, .oxy-btn, .ph-btn {
+    display: flex;
+    margin-top: 20px;
+    align-items: center;
+    justify-content: center;
+    
+}
+#low-temp-btn, #low-oxy-btn, #low-ph-btn {
+    margin-top: 20px;
+    width: 100px;
+    height: 50px;
+    background-color: black;
+    color: white;
+
+}
+#nor-temp-btn, #nor-oxy-btn, #nor-ph-btn {
+    margin-top: 20px;
+    width: 100px;
+    height: 50px;
+    background-color: black;
+    color: white;
 }
 
-.sensor-data-item {
+#high-temp-btn, #high-oxy-btn, #high-ph-btn {
+    margin-top: 20px;
+    width: 100px;
+    height: 50px;
+    background-color: black;
+    color: white;
+}
+/* #low-temp-btn:hover, #low-oxy-btn:hover, #low-ph-btn:hover {
+    background-color: rgb(20, 116, 111);
+    transition: 0.5s;
+}
+#nor-temp-btn:hover, #nor-oxy-btn:hover, #nor-ph-btn:hover {
+    background-color: rgb(20, 116, 111);
+    transition: 0.5s;
+}
+#high-temp-btn:hover, #high-oxy-btn:hover, #high-ph-btn:hover {
+    background-color: rgb(20, 116, 111);
+    transition: 0.5s;
+} */
+
+/* .sensor-data-item {
     display: flex;
     color: black;
     width: 100%;
@@ -117,32 +173,16 @@
     font-weight: bold;
     font-family: Calibri;
     border-radius: 25px;
-}
+} */
 
-.sensor-data-item.mmi1 {
+/* .sensor-data-item.mmi1 {
     background-color: aquamarine;
     display:flex;
     flex-direction: column;
     align-items: center;
-}
-
-.sensor-data-item.mmi2 {
-    background-color: greenyellow;
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.sensor-data-item.mmi3 {
-    background-color: rgb(0, 110, 255);
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-/* .sensor-data-item.mmi1.val{
-    margin-top: 50px;
 } */
+
+
 
 /* CSS for history menu */
 
@@ -193,6 +233,17 @@
 }
 #phChart {
     position:absolute; max-width:800px;
+}
+.graph-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.canvas-item {
+    align-items: center;
+    justify-content: center;
+    margin-top: 33%;
 }
 .box-submit {
 	text-align: center;

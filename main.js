@@ -28,51 +28,129 @@ function getClock() {
 
 
 var temp;
+var tempState = 1;
+
+function changeTemp() {
+    document.getElementById("low-temp-btn").onclick = function() {
+        tempState = 0;
+        document.getElementById("low-temp-btn").style.backgroundColor = "blue";
+        document.getElementById("nor-temp-btn").style.backgroundColor = "black";
+        document.getElementById("high-temp-btn").style.backgroundColor = "black";
+    }
+    document.getElementById("nor-temp-btn").onclick = function() {
+        tempState = 1;
+        document.getElementById("low-temp-btn").style.backgroundColor = "black";
+        document.getElementById("nor-temp-btn").style.backgroundColor = "rgb(21, 116, 111)";
+        document.getElementById("high-temp-btn").style.backgroundColor = "black";
+    }
+    document.getElementById("high-temp-btn").onclick = function() {
+        tempState = 2;
+        document.getElementById("low-temp-btn").style.backgroundColor = "black";
+        document.getElementById("nor-temp-btn").style.backgroundColor = "black";
+        document.getElementById("high-temp-btn").style.backgroundColor = "orange";
+    }
+}
+function changeOxy() {
+    document.getElementById("low-oxy-btn").onclick = function() {
+        oxyState = 0;
+        document.getElementById("low-oxy-btn").style.backgroundColor = "blue";
+        document.getElementById("nor-oxy-btn").style.backgroundColor = "black";
+        document.getElementById("high-oxy-btn").style.backgroundColor = "black";
+
+    }
+    document.getElementById("nor-oxy-btn").onclick = function() {
+        oxyState = 1;
+        document.getElementById("low-oxy-btn").style.backgroundColor = "black";
+        document.getElementById("nor-oxy-btn").style.backgroundColor = "rgb(21, 116, 111)";
+        document.getElementById("high-oxy-btn").style.backgroundColor = "black";
+
+    }
+    document.getElementById("high-oxy-btn").onclick = function() {
+        oxyState = 2;
+        document.getElementById("low-oxy-btn").style.backgroundColor = "black";
+        document.getElementById("nor-oxy-btn").style.backgroundColor = "black";
+        document.getElementById("high-oxy-btn").style.backgroundColor = "orange";
+    }
+}
+function changePh() {
+    document.getElementById("low-ph-btn").onclick = function() {
+        phState = 0;
+        document.getElementById("low-ph-btn").style.backgroundColor = "blue";
+        document.getElementById("nor-ph-btn").style.backgroundColor = "black";
+        document.getElementById("high-ph-btn").style.backgroundColor = "black";
+
+    }
+    document.getElementById("nor-ph-btn").onclick = function() {
+        phState = 1;
+        document.getElementById("low-ph-btn").style.backgroundColor = "black";
+        document.getElementById("nor-ph-btn").style.backgroundColor = "rgb(21, 116, 111)";
+        document.getElementById("high-ph-btn").style.backgroundColor = "black";
+    }
+    document.getElementById("high-ph-btn").onclick = function() {
+        phState = 2;
+        document.getElementById("low-ph-btn").style.backgroundColor = "black";
+        document.getElementById("nor-ph-btn").style.backgroundColor = "black";
+        document.getElementById("high-ph-btn").style.backgroundColor = "orange";
+    }
+}
 function getTemp() {
-    temp = Math.floor(Math.random() * 15) + 245;
+    if (tempState == 0) temp = Math.floor(Math.random() * 20) + 230;    //Low temp
+    else if (tempState == 1) temp = Math.floor(Math.random() * 20) + 250;    //Normal temp
+    else temp = Math.floor(Math.random() * 21) + 270;    //High temp
     temp = temp/10;
     document.getElementById("get-temp").innerHTML = temp + "°C\n";
-    if (temp >= 26) {
-        //document.getElementById("check-temp").innerHTML = "Temperature is high.";
+    if (temp > 27) {
+        document.getElementById("check-temp").innerHTML = "Temperature is high.";
         document.getElementById("temp-box").style.backgroundColor = "orange";
     }
-    else if (temp <= 25) {
-        //document.getElementById("check-temp").innerHTML = "Temperature is low.";
+    else if (temp < 25) {
+        document.getElementById("check-temp").innerHTML = "Temperature is low.";
         document.getElementById("temp-box").style.backgroundColor = "blue";
     }
     else {
-        //document.getElementById("check-temp").innerHTML = "Temperature is normal.";
+        document.getElementById("check-temp").innerHTML = "Temperature is normal.";
         document.getElementById("temp-box").style.backgroundColor = "aquamarine";
     }
 }
 
 
 var oxyRate;
+var oxyState = 1;
+
 function getOxy() {
-    oxyRate = Math.floor(Math.random() * 21) + 65;
+    if (oxyState == 0) oxyRate = Math.floor(Math.random() * 30) + 30;    //Low oxy
+    else if (oxyState == 1) oxyRate = Math.floor(Math.random() * 21) + 60;  //Normal oxy
+    else oxyRate = Math.floor(Math.random() * 21) + 81;    //High oxy
     oxyRate = oxyRate/10;
     document.getElementById("get-oxy").innerHTML = oxyRate + "‰\n";
     if (oxyRate >= 6 && oxyRate <= 8) {
-        //document.getElementById("check-oxy").innerHTML = "Oxygen rate is normal.";
+        document.getElementById("check-oxy").innerHTML = "Oxygen rate is normal.";
         document.getElementById("oxy-box").style.backgroundColor = "aquamarine";
     }
+    else if (oxyRate < 6) {
+        document.getElementById("check-oxy").innerHTML = "Oxygen rate is low.";
+        document.getElementById("oxy-box").style.backgroundColor = "orange";
+    }
     else {
-        //document.getElementById("check-oxy").innerHTML = "Oxygen rate is low.";
+        document.getElementById("check-oxy").innerHTML = "Oxygen rate is high.";
         document.getElementById("oxy-box").style.backgroundColor = "orange";
     }
 }
 
 var ph;
+var phState = 1;
 function getpH() {
-    ph = Math.floor(Math.random() * 21) + 60;
+    if (phState == 0) ph = Math.floor(Math.random() * 21) + 45;    //Low pH
+    else if (phState == 1) ph = Math.floor(Math.random() * 11) + 68;  //Normal pH
+    else ph = Math.floor(Math.random() * 21) + 79;    //High pH
     ph = ph / 10;
     document.getElementById("get-ph").innerHTML = ph + "\n";
     if (ph >= 6.8 && ph <= 7.8) {
-        //document.getElementById("check-ph").innerHTML = "pH is normal.";
+        document.getElementById("check-ph").innerHTML = "pH is normal.";
         document.getElementById("ph-box").style.backgroundColor = "aquamarine";
     }
     else {
-        //document.getElementById("check-ph").innerHTML = "pH is not good for fishes.";
+        document.getElementById("check-ph").innerHTML = "pH is not good for fishes.";
         document.getElementById("ph-box").style.backgroundColor = "orange";
     }
 }
@@ -139,7 +217,7 @@ function domloaded(){
             options: {
             legend: {display: false},
             scales: {
-                yAxes: [{ticks: {min: 23, max:27, stepSize: 0.5}}],
+                yAxes: [{ticks: {min: 20, max:30, stepSize: 0.5}}],
             },
             animation: {duration: 0},
             title: {
@@ -293,11 +371,11 @@ function getToken() {
     username = document.getElementById("username-box").value;
     userToken = "I9T_" + CryptoJS.MD5(username).toString();
     document.getElementById("token-box").value = userToken;
+    document.getElementById("show-username").innerHTML = "Device 1: " + username; 
 }
 var copyBtn = document.getElementById("copy-btn");
 var tempClipboard = document.getElementById("clipboard");
 document.copyBtn.addEventListener('click', copyToken);
 
-
-
+//lowTemp function
 

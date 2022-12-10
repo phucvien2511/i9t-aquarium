@@ -14,12 +14,13 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     </head>
     <body>
-    <h1 style="text-align: left; margin-top: 20px">Graph</h1>
-    <button id="swap-canvas-btn" onclick="swapCanvases()">Swap graph</button>
-    <div>
-        <canvas id="tempChart"></canvas>
-        <canvas id="oxyChart"></canvas>
-        <canvas id="phChart"></canvas>
+    <div class="graph-container">
+        <h1 style="text-align: left; margin-top: 20px">Graph</h1>
+        <button id="swap-canvas-btn" onclick="swapCanvases()">Swap graph</button>
+        <canvas class ="canvas-item" id="tempChart"></canvas>
+        <canvas class ="canvas-item" id="oxyChart"></canvas>
+        <canvas class ="canvas-item" id="phChart"></canvas>
     </div>
+   
 </body>
 </html>
