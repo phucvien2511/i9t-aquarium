@@ -148,43 +148,6 @@
     background-color: black;
     color: white;
 }
-/* #low-temp-btn:hover, #low-oxy-btn:hover, #low-ph-btn:hover {
-    background-color: rgb(20, 116, 111);
-    transition: 0.5s;
-}
-#nor-temp-btn:hover, #nor-oxy-btn:hover, #nor-ph-btn:hover {
-    background-color: rgb(20, 116, 111);
-    transition: 0.5s;
-}
-#high-temp-btn:hover, #high-oxy-btn:hover, #high-ph-btn:hover {
-    background-color: rgb(20, 116, 111);
-    transition: 0.5s;
-} */
-
-/* .sensor-data-item {
-    display: flex;
-    color: black;
-    width: 100%;
-    justify-content: center;
-    flex-flow: row;
-    margin-left: 20px;
-    margin-right: 20px; 
-    font-size: 30px;
-    font-weight: bold;
-    font-family: Calibri;
-    border-radius: 25px;
-} */
-
-/* .sensor-data-item.mmi1 {
-    background-color: aquamarine;
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-} */
-
-
-
-/* CSS for history menu */
 
 .log-table {
     display: flex;
@@ -351,3 +314,14 @@ input[type="submit"] {
     height: 1px;
 }
 
+/* Mobile: width < 740px */
+@media only screen and (max-width: 46.1875em) {
+    .heading-list {
+        
+    }
+}
+
+/* Tablet: width >= 740px and width < 1024px */
+@media only screen and (min-width: 46.25em) and (max-width: 63.9375em) {
+    
+}
